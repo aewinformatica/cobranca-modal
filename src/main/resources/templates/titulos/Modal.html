@@ -1,0 +1,65 @@
+<!DOCTYPE html >
+<html xmlns="htto://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<meta charset="utf-8"/>
+	
+	   		<div class="modal fade" id="tituloModal" tabindex="-1" role="dialog" style="margin-top:200px">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+				<h4 class="modal-title" th:if="${titulo.novo}">Cadastro</h4>
+			        <h4 class="modal-title" th:unless="${titulo.novo}" th:text="|Edicao do Titulo  ${titulo.descricao}|">Edicao</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form th:object="${titulo}" th:action="${titulo.novo}? @{/titulos/novo} : @{titulos/{codigo}(codigo=${titulo.codigo})}" method="POST"  >
+					<div class="modal-body">
+					<input type="hidden" id="codigo-modal" th:field="*{codigo}"/>
+				
+				<div class="form-group" th:classappend="${#fields.hasErrors('descricao')} ? has-error">
+					<label for="descricao" class="col-sm-2 control-label">Descrição</label>
+					<input type="text" class="form-control" id="descricao-modal" th:field="*{descricao}"/>
+				</div>
+				
+				<div class="form-group" th:classappend="${#fields.hasErrors('dataVencimento')} ? has-error" id="sandbox-container">
+				
+					<label for="dataVencimento" class="control-label">Data de vencimento</label>
+					  <div class='input-group date' id='datetimepicker1'>
+						<input type="text" class="form-control datepicker"	id="vencimento-modal" th:field="*{dataVencimento}"/>
+						<span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar"></span>
+						</span>
+					</div>
+				</div>
+				
+				<div class="form-group" th:classappend="${#fields.hasErrors('valor')} ? has-error">
+					<label for="valor" class="col-sm-2 control-label">Valor</label>
+			
+						<input type="text" class="form-control js-currency" id="valor-modal" th:field="*{valor}"/>
+				</div>
+				
+				<div class="form-group">
+					<label for="status" class="col-sm-2 control-label">Status</label>
+						<select class="form-control js-combo-status-titulo" name="status" th:field="*{status}">
+							<option th:each="status : ${todosStatusTitulo}" th:value="${status}" th:text="${status.descricao}"></option>
+                    	</select>
+				</div>
+
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+					<button type="submit" class="btn btn-primary">Salvar</button>
+				</div>
+				</form>
+
+
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+</html>

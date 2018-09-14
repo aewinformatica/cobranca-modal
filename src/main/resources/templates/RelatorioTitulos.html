@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
+<head>
+<title>Relaroio de Títulos</title>
+</head>
+	<div class="container-fluid">
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="clearfix">
+					<h1 class="panel-title aew-titulo-panel">Relatorio de Titulos</h1>
+					<a class="btn btn-link aew-link-panel" th:href="@{/titulos/novo}">Novo
+						Titulo</a>
+				</div>
+			</div>
+			<div class="panel-body">
+			
+	   		<form method="POST" class="form-horizontal" th:action="@{/titulos}" th:object="${filtro}">
+	   			<div class="form-group">
+	 
+	   				<div class="col-sm-4">
+	   						<span class="input-group-btn">
+	   							<button type="submit" class="btn btn-primary">Emitir</button>
+	   						</span>
+	   					
+	   				</div>
+	   			</div>
+	   			
+	   			
+	   		</form>
+	   		</div>
+	   		</div>
+	   		</div>
+</html>

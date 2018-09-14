@@ -1,0 +1,30 @@
+.navbar-brand{
+	padding-top:12px;
+}
+
+.panel panel-default{
+ 
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.aew-titulo-panel{
+	float:left;
+	padding: 0;
+	padding-top: 10px
+}
+
+.aew-link-panel{
+	float: right;
+	padding-top: 10px
+}
+.aw-layout-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  margin: 0;
+  border-top: 1px solid #eeeeee;
+  padding-left:40%;
+  transition: all 0.5s;
+}

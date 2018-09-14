@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="htto://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sistema de Controle de Titulos</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap-datepicker.standalone.min.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+	
+	<nav class="navbar js-navbar navbar-inverse navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"><img alt="AewInformatica"
+					src="/imagens/aewinformatica.png" /> </a>
+			</div>
+			
+		</div>
+	</nav>
+<!-- 	 <p> -->
+<!--            Bem Vindo a Aplicação Spring Boot e Thymeleaf ! Hoje é : <strong th:text="${#temporals.format(now, 'dd/MM/yyyy')}">12/09/2018</strong> -->
+<!--      </p> -->
+
+	<section layout:fragment="conteudo">
+
+</section >
+<footer class="aw-layout-footer  js-content" th:fragment="layout-footer">
+	<div class="container-fluid">
+		<span class="aw-footer-disclaimer">&copy; 2018 AeWInformatica. Todos os direitos reservados.</span>
+	</div>
+</footer>
+<script th:src="@{/js/jquery-2.1.4.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery.mask.min.js}"></script>
+<script th:src="@{/js/bootstrap-datepicker.min.js}"></script>
+<script th:src="@{/js/bootstrap-datepicker.pt-BR.min.js}"></script>
+<script th:src="@{/js/jquery.maskMoney.min.js}"></script>
+<script th:src="@{/js/moment.js}"></script>
+<script th:src="@{/js/cobranca.js}"></script>
+</body>
+</html>
