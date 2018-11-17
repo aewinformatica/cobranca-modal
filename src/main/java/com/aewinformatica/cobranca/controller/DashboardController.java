@@ -12,9 +12,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class DashboardController {
 
 	@GetMapping
-	ModelAndView home(){
+	public ModelAndView home(){
 		ModelAndView mv = new ModelAndView("LayoutPadrao");
 		mv.addObject("now", LocalDateTime.now());
-		return mv ;
+		
+		return new ModelAndView ("redirect:/titulos");
 	}
+	
+
 }

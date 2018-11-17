@@ -27,11 +27,11 @@ public class CadastroTituloService {
 	}
 
 	public void excluir(Long codigo) {
-		titulos.delete(codigo);
+		titulos.deleteById(codigo);
 	}
 
 	public String receber(Long codigo) {
-		Titulo titulo = titulos.findOne(codigo);
+		Titulo titulo = titulos.getOne(codigo);
 		titulo.setStatus(StatusTitulo.RECEBIDO);
 		titulos.save(titulo);
 		
