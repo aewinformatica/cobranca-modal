@@ -27,12 +27,16 @@
 				<div class="form-group" th:classappend="${#fields.hasErrors('dataVencimento')} ? has-error" id="sandbox-container">
 				
 					<label for="dataVencimento" class="control-label">Data de vencimento</label>
+					
 					  <div class='input-group date' id='datetimepicker1'>
 						<input type="text" class="form-control datepicker"	id="vencimento-modal" th:field="*{dataVencimento}"/>
+						<div class="input-group-append">
 						<span class="input-group-addon">
-						<span class="glyphicon glyphicon-calendar"></span>
+								<span class="input-group-text"><i class="fa fa-calendar"></i></span> 					
 						</span>
-					</div>
+						</div>
+					 </div>
+						
 				</div>
 				
 				<div class="form-group" th:classappend="${#fields.hasErrors('valor')} ? has-error">

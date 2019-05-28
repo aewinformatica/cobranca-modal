@@ -1,30 +1,17 @@
-.navbar-brand{
-	padding-top:12px;
-}
+@charset "UTF-8";
 
-.panel panel-default{
- 
-	margin-left: 10px;
-	margin-right: 10px;
-}
-.aew-titulo-panel{
-	float:left;
-	padding: 0;
-	padding-top: 10px
-}
-
-.aew-link-panel{
-	float: right;
-	padding-top: 10px
-}
-.aw-layout-footer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 50px;
-  margin: 0;
-  border-top: 1px solid #eeeeee;
-  padding-left:40%;
-  transition: all 0.5s;
-}
+/* @import url(https://fonts.googleapis.com/icon?family=Material+Icons); */
+@import url(../../css/bootstrap.min.css?e);
+@import url(font-awesome.min.css);
+/* @import url(ionicons.min.css); */
+/* @import url(dripicons.css); */
+@import url(glyphicons.css);
+/* @import url(themify-icons.css); */
+/* @import url(animate.css); */
+/* @import url(simple-line-icons.css); */
+/* @import url(linea-icon.css); */
+/* @import url(pe-icon-7-stroke.css); */
+/* @import url(material-design-iconic-font.min.css); */
+/* @import url(../../vendors/owl.carousel/dist/assets/owl.carousel.min.css); */
+/* @import url(../../vendors/owl.carousel/dist/assets/owl.theme.default.min.css); */
+/* @import url(https://fonts.googleapis.com/icon?family=Material+Icons); */

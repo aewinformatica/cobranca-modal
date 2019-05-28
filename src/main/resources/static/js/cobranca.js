@@ -51,7 +51,7 @@ $(function() {
 
 $('.js-contraste-toggle').bind('click',function(){
 	
-	$('.js-navbar').toggleClass('navbar-inverse');
+//	$('.js-navbar').toggleClass('navbar-inverse');
 }
 		
 );
