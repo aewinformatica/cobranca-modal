@@ -16,14 +16,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.aewinformatica.cobranca.dto.StatusTituloDTO;
 import com.aewinformatica.cobranca.model.StatusTitulo;
-import com.aewinformatica.cobranca.service.RelatorioService;
+import com.aewinformatica.cobranca.report.ReportGenerator;
 
 @Controller
 @RequestMapping("/relatorios")
 public class RelatoriosController {
 	
 	@Autowired
-	private RelatorioService relatorioService;
+	private ReportGenerator reportGenerator;
 	
 	@GetMapping("/titulosEmitidos")
 	public ModelAndView relatorioTitulosEmitidos() {
@@ -34,7 +34,7 @@ public class RelatoriosController {
 	
 	@PostMapping("/titulosEmitidos")
 	public ResponseEntity<byte[]> gerarRelatorioTitulosEmitidos(StatusTituloDTO statusTituloDTO) throws Exception {
-		byte[] relatorio = relatorioService.gerarRelatorioTitulos(statusTituloDTO); 
+		byte[] relatorio = reportGenerator.gerarRelatorioTitulos(statusTituloDTO); 
 		
 		return ResponseEntity.ok()
 				.header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_PDF_VALUE)
