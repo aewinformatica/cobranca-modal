@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-import com.aewinformatica.cobranca.dto.StatusTituloDTO;
 import com.aewinformatica.cobranca.report.ReportGenerator;
 
 import net.sf.jasperreports.engine.JasperExportManager;
@@ -26,10 +25,9 @@ public class ReportGeneratorLocal implements ReportGenerator {
 	private DataSource dataSource;
 	
 	@Override
-	public byte[] gerarRelatorioTitulos(StatusTituloDTO statusTituloDTO) throws Exception {
+	public byte[] gerarRelatorioTitulos(String status) throws Exception {
 
 		
-		String status = statusTituloDTO.getStatus().getDescricao();
 		Map<String, Object> parametros = new HashMap<>();
 		parametros.put("format", "pdf");
 		parametros.put("PARAM_STATUS", status);

@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorio_titulos_prod" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b3a1f988-4f9b-44ad-803d-e7d9b4e5199d">
-	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[dGl0dWxvICwxNSwxNSxhZTFiOWNkNy0zYWE2LTQ2ZTYtODg4YS1jZDg5ZTI0ZWQ2NmM7
+]]>
+	</property>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
 	<parameter name="PARAM_STATUS" class="java.lang.String">
 		<defaultValueExpression><![CDATA["PENDENTE"]]></defaultValueExpression>
 	</parameter>
 	<queryString language="SQL">
-		<![CDATA[SELECT  * FROM titulo where status =  $P{PARAM_STATUS}]]>
+		<![CDATA[SELECT codigo,
+	data_vencimento,
+	descricao,
+	status,
+	valor
+FROM titulo
+WHERE 
+	 'NULL' = $P{PARAM_STATUS}]]>
 	</queryString>
 	<field name="codigo" class="java.lang.Long">
 		<property name="com.jaspersoft.studio.field.label" value="codigo"/>
@@ -43,7 +53,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="19"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Relatorio de Titulos"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Relatorio de Titulos Web"]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="35" y="0" width="530" height="30" uuid="8f9a9e5f-853e-4e1d-915d-bf540269b86e"/>
