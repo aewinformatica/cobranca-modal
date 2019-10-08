@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{LayoutPadrao}">
+
+<head>
+	<title>Relatório - Titulos Emitidos</title>
+</head>
+
+<section layout:fragment="conteudo">
+
+	<div class="page-header">
+		<div class="container-fluid">
+			<h1>
+				Relatório de Titulos emitidos
+			</h1>
+		</div>
+	</div>
+	
+	<div class="container-fluid">
+<!-- 		<form method="POST" th:object="${StatusTituloDTO}" th:action="@{/relatorios/titulosEmitidos}"> -->
+				<form method="POST"  th:action="@{/relatorios/titulosEmitidos}">
+<!-- 			<th:block th:include="fragments/MensagensErroValidacao"></th:block> -->
+			
+			<div class="row">
+				<div class="form-group">
+					<label for="status" class="col-sm-2 control-label">Status</label>
+						<select class="form-control js-combo-status-titulo" name="status" >
+							<option th:each="status : ${todosStatusTitulo}" th:value="${status}" th:text="${status.descricao}"></option>
+                    	</select>
+				</div>
+			</div>
+				
+			<button type="submit" class="btn  btn-primary">Emitir</button>
+		</form>
+	</div>
+</section>
+
+</html>
