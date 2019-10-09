@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -46,9 +47,11 @@ public class RelatoriosController {
 	}
 	
 	@PostMapping
-	public void imprimir(@RequestParam Map<String, Object> parametros, HttpServletResponse response) throws JRException, SQLException, IOException {
+	public void imprimir(@RequestParam Map<String, Object> parametros,String status, HttpServletResponse response) throws JRException, SQLException, IOException {
 		
 		parametros = parametros == null ? parametros = new HashMap<>() : parametros;
+		parametros.put("PARAM_STATUS", status);
+		System.out.println(parametros);
 		
 		// Pega o arquivo .jasper localizado em resources
 		InputStream jasperStream = this.getClass().getResourceAsStream("/relatorios/relatorio_titulos.jasper");
@@ -76,5 +79,11 @@ public class RelatoriosController {
 	public List<StatusTitulo> todosStatusiTitulo() {
 
 		return Arrays.asList(StatusTitulo.values());
+	}
+	
+	@ModelAttribute("now")
+	public LocalDateTime dataHora() {
+		
+		return LocalDateTime.now();
 	}
 }

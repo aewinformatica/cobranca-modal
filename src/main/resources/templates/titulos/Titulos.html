@@ -18,8 +18,7 @@
 		<div class="panel-heading">
 			<div class="clearfix">
 
-				<h1 class="panel-title aew-titulo-panel">Sistema de Controle de
-					Títulos</h1>
+				<h1 class="panel-title aew-titulo-panel">Sistema de Controle de Títulos</h1>
 
 				<div class="float-right">
 					<button type="button"
@@ -106,6 +105,21 @@
 					</tbody>
 				</table>
 			</div>
+			<div>
+			<h1>Relatório de Titulos emitidos</h1>
+			</div>	
+		<form method="POST"  th:action="@{/relatorios}" target="_blank">
+			<div class="row">
+				<div class="form-group">
+					<label for="status" class="col-sm-2 control-label">Status</label>
+						<select class="form-control js-combo-status-titulo" id="status" name="status" >
+							<option th:each="status : ${todosStatusTitulo}" th:value="${status}" th:text="${status.descricao}"></option>
+                    	</select>
+				</div>
+			</div>
+				
+			<button type="submit" class="btn  btn-primary">Emitir</button>
+		</form>
 		</div>
 
 		<div th:insert="titulos/Modal"></div>

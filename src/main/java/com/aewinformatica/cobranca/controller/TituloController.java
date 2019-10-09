@@ -33,13 +33,11 @@ public class TituloController {
 
 	private static String VIEW = "titulos/Titulos";
 
-
-	
 	@RequestMapping("/novo")
 	public ModelAndView novo(Titulo titulo) {
 
 		ModelAndView mv = new ModelAndView(VIEW);
-		mv.addObject("now", LocalDateTime.now());
+//		mv.addObject("now", LocalDateTime.now());
 		
 		return mv;
 	}
@@ -50,7 +48,7 @@ public class TituloController {
 		
 		ModelAndView mv = new ModelAndView(VIEW);
 		mv.addObject("titulos", todosTitulos);
-		mv.addObject("now", LocalDateTime.now());
+//		mv.addObject("now", LocalDateTime.now());
 		return mv;
 	}
 	
@@ -73,7 +71,7 @@ public class TituloController {
 		
 		ModelAndView mv =  novo(titulo);
 		mv.addObject(titulo);
-		mv.addObject("now", LocalDateTime.now());
+//		mv.addObject("now", LocalDateTime.now());
 		return mv;
 		
 	}
@@ -95,6 +93,12 @@ public class TituloController {
 	public List<StatusTitulo> todosStatusiTitulo() {
 
 		return Arrays.asList(StatusTitulo.values());
+	}
+	
+	@ModelAttribute("now")
+	public LocalDateTime dataHora() {
+		
+		return LocalDateTime.now();
 	}
 
 }
