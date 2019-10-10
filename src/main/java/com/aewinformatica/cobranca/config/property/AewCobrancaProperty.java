@@ -8,10 +8,13 @@ public class AewCobrancaProperty {
 	private String originPermitida = "http://localhost:8000";
 
 	private final Seguranca seguranca = new Seguranca();
-
+	
 	public Seguranca getSeguranca() {
 		return seguranca;
 	}
+	
+
+
 
 	public String getOriginPermitida() {
 		return originPermitida;
@@ -34,4 +37,6 @@ public class AewCobrancaProperty {
 		}
 
 	}
+	
+
 }

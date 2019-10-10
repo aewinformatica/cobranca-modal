@@ -37,8 +37,6 @@ public class TituloController {
 	public ModelAndView novo(Titulo titulo) {
 
 		ModelAndView mv = new ModelAndView(VIEW);
-//		mv.addObject("now", LocalDateTime.now());
-		
 		return mv;
 	}
 
@@ -48,7 +46,6 @@ public class TituloController {
 		
 		ModelAndView mv = new ModelAndView(VIEW);
 		mv.addObject("titulos", todosTitulos);
-//		mv.addObject("now", LocalDateTime.now());
 		return mv;
 	}
 	
@@ -71,14 +68,11 @@ public class TituloController {
 		
 		ModelAndView mv =  novo(titulo);
 		mv.addObject(titulo);
-//		mv.addObject("now", LocalDateTime.now());
 		return mv;
-		
 	}
 	
 	@RequestMapping(value="{codigo}", method = RequestMethod.DELETE)
-	public String excluir(@PathVariable Long codigo, RedirectAttributes attributes){
-		
+	public String excluir(@PathVariable Long codigo, RedirectAttributes attributes){	
 		cadastroTituloService.excluir(codigo);
 		attributes.addFlashAttribute("mensagem","Titulo excluido com sucesso!");
 		return "redirect:/titulos"; 
@@ -91,7 +85,6 @@ public class TituloController {
 	
 	@ModelAttribute("todosStatusTitulo")
 	public List<StatusTitulo> todosStatusiTitulo() {
-
 		return Arrays.asList(StatusTitulo.values());
 	}
 	
