@@ -60,6 +60,8 @@ $('.js-contraste-toggle').bind('click',function(){
 $( ".js-btn-novo" ).on( "click", function novo() {
 	
 	$('#tituloModal').on('show.bs.modal', function(event){
+		
+		$('#descricao-modal').trigger('focus');
 	
 		if (event.relatedTarget === undefined) return;
 		
