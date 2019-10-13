@@ -67,7 +67,7 @@ public class RelatoriosController {
 		response.setContentType("application/pdf");
 		// Define que o arquivo pode ser visualizado no navegador e também nome final do arquivo
 		// para fazer download do relatório troque 'inline' por 'attachment'
-		response.setHeader("Content-Disposition", "inline; filename=livros.pdf");
+		response.setHeader("Content-Disposition", "inline; filename=titulos.pdf");
 
 		// Faz a exportação do relatório para o HttpServletResponse
 		final OutputStream outStream = response.getOutputStream();
