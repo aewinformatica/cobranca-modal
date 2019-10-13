@@ -21,7 +21,7 @@
 				
 				<div class="form-group" th:classappend="${#fields.hasErrors('descricao')} ? has-error">
 					<label for="descricao" class="col-sm-2 control-label">Descrição</label>
-					<input type="text" class="form-control" id="descricao-modal" th:field="*{descricao}"/>
+					<input type="text" class="form-control" id="descricao-modal" th:field="*{descricao}" autofocus="autofocus"/>
 				</div>
 				
 				<div class="form-group" th:classappend="${#fields.hasErrors('dataVencimento')} ? has-error" id="sandbox-container">
