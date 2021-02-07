@@ -414,12 +414,11 @@
 
 .aew-layout-footers {
 	position:static;
-	left: 0;
-	right: 0;
-	bottom: 0;
 	height: 50px;
-	margin: 0;
 	border-top: 1px solid #eeeeee;
 	text-align: center;
 	transition: all 0.5s;
+}
+.aew-footer-disclaimer {
+	
 }
