@@ -413,6 +413,7 @@
 }
 
 .aew-layout-footer {
+	position:static;
 	left: 0;
 	right: 0;
 	bottom: 0;
