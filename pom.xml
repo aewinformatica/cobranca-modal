@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -29,48 +30,53 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
-           <groupId>nz.net.ultraq.thymeleaf</groupId>
-           <artifactId>thymeleaf-layout-dialect</artifactId>
-        </dependency>
-		<dependency>
-            <groupId>com.github.mxab.thymeleaf.extras</groupId>
-            <artifactId>thymeleaf-extras-data-attribute</artifactId>
-        </dependency>
-	    <dependency>
-	    	<groupId>org.thymeleaf.extras</groupId>
-	    	<artifactId>thymeleaf-extras-java8time</artifactId>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
 		</dependency>
-		
+		<dependency>
+			<groupId>com.github.mxab.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-data-attribute</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-java8time</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+<!-- 		Spring Security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
-		<!-- 	UTILIZADO PARA CRIAR O GERENCIAMENTO DINAMICO DO BANCO DE DADOS -->
+
+		<!-- UTILIZADO PARA CRIAR O GERENCIAMENTO DINAMICO DO BANCO DE DADOS -->
 		<dependency>
-		   <groupId>org.apache.commons</groupId>
+			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
 			<scope>compile</scope>
 		</dependency>
-		
-<!-- 		PARA PEGAR CONFIGURAÇOES E PASSAR PARA O BEAN ConfigurationProperties -->
+
+		<!-- PARA PEGAR CONFIGURAÇOES E PASSAR PARA O BEAN ConfigurationProperties -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
